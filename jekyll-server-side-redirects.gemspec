@@ -2,11 +2,13 @@ Gem::Specification.new do |s|
     s.name        = 'jekyll-server-side-redirects'
     s.version     = '0.1.0'
     s.authors     = ['Aline Marques']
-    s.email       = 'alinem_oliveira@yahoo.com'
+    s.email       = ['alinem_oliveira@yahoo.com']
     s.summary     = 'Jekyll plugin to generate server-side redirects'
-    s.description = 'Jekyll plugin to generate server-side redirects'
-    s.license     = 'MIT'
+    s.description = 'Generates server-specific files for handling redirects (e.g., .htaccess, firebase.json).'
+    s.files       = Dir['lib/**/*.rb'] + ['LICENSE', 'README.md']
+    s.require_paths = ['lib']
+    s.licenses    = ['MIT']
+    s.homepage    = 'https://github.com/marquesaline/jekyll-server-side-redirects'
 
-    spec.add_development_dependency 'rspec'
-
+    s.add_development_dependency 'rspec', '~> 3.13'
 end

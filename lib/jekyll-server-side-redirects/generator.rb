@@ -1,4 +1,5 @@
 require_relative './servers/firebase'
+require_relative './servers/apache'
 
 module Jekyll
     module RedirectGenerator
@@ -10,6 +11,8 @@ module Jekyll
         case server
         when 'firebase'
             Jekyll::ServerSideRedirects::Firebase.generate_redirects(site)
+        when 'apache' 
+            Jekyll::ServerSideRedirects::Apache.generate_redirects(site)
         else
             raise 'Invalid server specified'
         end

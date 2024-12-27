@@ -1,5 +1,3 @@
-require 'json'
-
 module Jekyll
     module ServerSideRedirects
         module Firebase
@@ -43,12 +41,12 @@ module Jekyll
 
                     redirect_from = item.data['redirect_from']
                     redirect_from = [redirect_from] unless redirect_from.is_a?(Array)
-                    
+
                     redirect_from.each do |source|
-                        redirects << { 
+                        redirects << {
                             'source' => source,
                             'destination' => item.permalink,
-                            'type' => 301
+                            'type' => item.data['redirect_type'] || 301 
                         }
                     end
                 end
